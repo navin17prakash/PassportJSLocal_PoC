@@ -1,0 +1,19 @@
+<html>          
+<title>
+    This is the Passport local Poc Page
+    
+   
+</title>    
+  <body>
+       Hello I am Navin
+      <%= name %>
+      
+      <% if(!isAuthenticated) { %>
+            <a href= "/login"> Login here.Click this link </a>
+
+      <% } else { %>
+            <p> Already logged in by  </p>
+      <% } %>
+  </body>
+  
+</html>
