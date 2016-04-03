@@ -21,6 +21,8 @@ expressApp.use(expressSession({secret : "secret",
                                  }));
 
 expressApp.set('view engine','ejs');
+
+
 expressApp.use(passport.initialize());
 expressApp.use(passport.session());
 
@@ -32,7 +34,12 @@ expressApp.get('/',function homeroute(request, response) {
 
 expressApp.get('/login',function loginroute(request, response) {
     response.render('login');
-})
+    
+});
+
+expressApp.post('/login', passport.authenticate('local'), function(request, response){
+    
+});
 expressApp.listen(port);
 console.log('listening on port '+ port);
 
